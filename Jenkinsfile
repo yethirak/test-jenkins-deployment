@@ -1,14 +1,10 @@
 pipeline {
-    agent  any
-
-    tools {nodejs "node"}
-
+    agent  { label 'jenkin-slave'}}
     
     stages {
-        stage('Build') {
+        stage('Checkout source') {
             steps {
                 git branch: 'main', url: 'https://github.com/yethirak/test-jenkins-deployment.git'
-                sh 'npm install'
             }
         }
     }
