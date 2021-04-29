@@ -12,12 +12,12 @@ pipeline {
                 sh 'npm install && npm run build'
             }
         }
-        stage('npm install and build') {
+        stage('docker build') {
             steps {
-                sh 'npm install && npm run build'
+                sh 'docker build -t localhost:5000/test-jenkins-deployment:latest .'
             }
         }
-        stage('docker build') {
+        stage('docker push') {
             steps {
                 sh 'docker push localhost:5000/test-jenkins-deployment:latest'
             }
