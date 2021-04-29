@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Akhil Way!
+          Learn React Akhil Way with pipeline!
         </a>
       </header>
     </div>
