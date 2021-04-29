@@ -9,22 +9,22 @@ pipeline {
         }
         stage('npm install and build') {
             steps {
-               sh 'npm install && npm run build'
+                sh 'npm install && npm run build'
             }
         }
         stage('npm install and build') {
             steps {
-               sh 'npm install && npm run build'
+                sh 'npm install && npm run build'
             }
         }
         stage('docker build') {
             steps {
-               sh 'docker push localhost:5000/test-jenkins-deployment:latest'
+                sh 'docker push localhost:5000/test-jenkins-deployment:latest'
             }
         }
         stage('kube deploy') {
             steps {
-               sh 'kubectl apply -n react-projects -f deployment.yaml'
+                sh 'kubectl apply -n react-projects -f deployment.yaml'
             }
         }
     }
