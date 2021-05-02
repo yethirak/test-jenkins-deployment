@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: test-jenkins-deployment
-          image: {{IMAGE_NAME}}
+          image: localhost:5000/test-jenkins-deployment:{{BUILD_NUMBER}}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
