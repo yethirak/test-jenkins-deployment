@@ -32,7 +32,7 @@ pipeline {
         }
         stage('kube deploy') {
             steps {
-                sh 'template=`cat "deployment.yaml" | sed "s/{{BUILD_NUMBER}}/:$BUILD_NUMBER/g"` && kubectl apply -n react-projects -f deployment.yaml'
+                sh 'cat deployment.yaml | sed "s/{{BUILD_NUMBER}}/:$BUILD_NUMBER:=1/g" | kubectl apply -f - '
             }
         }
     }
