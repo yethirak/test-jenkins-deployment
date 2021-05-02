@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout source') {
             steps {
-                git branch: 'main', url: 'https://github.com/yethirak/$repo_name.git'
+                git branch: 'main', url: 'https://github.com/yethirak/test-jenkins-deployment.git'
             }
         }
         stage('npm install and build') {
